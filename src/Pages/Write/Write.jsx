@@ -33,13 +33,13 @@ function Write() {
       newPost.photo = filename;
 
       try {
-        await axios.post("http://localhost:5000/api/upload", data);
+        await axios.post("https://blog-sailal.herokuapp.com/api/upload", data);
       } catch (err) {
         console.log(err);
       }
       try {
         const res = await axios.post(
-          "http://localhost:5000/api/posts",
+          "https://blog-sailal.herokuapp.com/api/posts",
           newPost
         );
         window.location.replace("/post/" + res.data._id);
